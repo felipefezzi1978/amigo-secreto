@@ -32,7 +32,6 @@ function sortear() {
 
     embaralha(amigos);
     let sorteio = document.getElementById('lista-sorteio');
-    
     for (let i = 0; i < amigos.length; i++) {
         if (i  == amigos.length - 1) {
             sorteio.innerHTML = sorteio.innerHTML + amigos[i] + ' --> ' + amigos[0] + '<br>';
@@ -40,6 +39,8 @@ function sortear() {
             sorteio.innerHTML = sorteio.innerHTML + amigos[i] + ' --> ' + amigos[i+1] + '<br>';
         }
     }
+    // Desabilita o botão de sorteio
+    document.querySelector('.button.secondary').disabled = true;
 }
 
 function embaralha(lista) {
@@ -58,4 +59,6 @@ function reiniciar() {
     amigos = [];
     document.getElementById('lista-sorteio').innerHTML = "";
     document.getElementById('lista-amigos').innerHTML = "";
+    // Reabilita o botão de sorteio
+    document.querySelector('.button.secondary').disabled = false;
 }
