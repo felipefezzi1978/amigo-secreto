@@ -6,6 +6,12 @@ function adicionar() {
         alert("Por favor, insira um nome válido.");
         return;
     }
+
+    if (amigos.includes(amigo)) {
+        alert("Amigo já adicionado.");
+        return; 
+    }
+
     let lista = document.getElementById('lista-amigos');
     amigos.push(amigo);
 
@@ -23,7 +29,7 @@ function sortear() {
         alert("Adicione pelo menos quatro amigos para sortear.");
         return;
     }
-    
+
     embaralha(amigos);
     let sorteio = document.getElementById('lista-sorteio');
     
@@ -33,7 +39,7 @@ function sortear() {
         } else {
             sorteio.innerHTML = sorteio.innerHTML + amigos[i] + ' --> ' + amigos[i+1] + '<br>';
         }
-}
+    }
 }
 
 function embaralha(lista) {
