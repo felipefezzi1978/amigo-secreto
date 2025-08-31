@@ -7,9 +7,9 @@ function adicionar() {
         return;
     }
 
-    if (amigos.includes(amigo)) {
-        alert("Amigo já adicionado.");
-        return; 
+    if (amigos.some(a => a.toLowerCase() === amigo.toLowerCase())) {
+    alert("Amigo já adicionado.");
+    return;
     }
 
     let lista = document.getElementById('lista-amigos');
